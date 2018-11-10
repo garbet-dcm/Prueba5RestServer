@@ -1,3 +1,18 @@
 1º) npm init
 2º) npm install express --save
-3º) npm install body-parser --save
+3º) npm i body-parser --save (i = install)
+4º) npm i mongoose --save
+5º) npm i mongoose-unique-validator --save
+6º) npm i bcrypt --save
+7º) npm i underscore --save
+
+Heroku
+package.json --> en "scripts" --> Se escribe "start": node server.js (Para que inicialice el servidor Heroku)
+
+En consola: 
+1º) Heroku login (la primera vez que se utilice)
+2º) cd ruta_del_proyecto
+3º) git init --> git add . --> git commit -m "Descripcion"
+4º) heroku git:remote -a nompre_del_proyecto_en_heroku
+5º) git push heroku master
+6º) Heroku open (Para abrir el proyecto o si no utilizar el link que da)
