@@ -14,9 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
     // parse application/json
 app.use(bodyParser.json())
 
-app.use(require('./rutas/usuario'));
-
-
+//Configuracion global de rutas
+app.use(require('./rutas/idex'));
 
 
 //27017 es el puerto de mongoDB y cafe el nombre de la base que he creado

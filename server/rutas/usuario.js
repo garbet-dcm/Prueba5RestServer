@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 const Usuario = require('../modelos/usuario');
+const { verificaToken, verificaAdmin_Role } = require('../middlewares/autentificacion');
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
 
-app.get('/usuario', function(req, res) {
+app.get('/usuario', verificaToken, (req, res) => {
+
+    //return res.json({ usuario: req.usuario }); //Regresaria el usuario del token
 
     //localhost:3000/usuario?desde=10 (desde el el 10 por ejemplo)
     let desde = Number(req.query.desde) || 0;
@@ -29,14 +32,14 @@ app.get('/usuario', function(req, res) {
                     usuarios,
                     count
                 });
-            })
-        })
+            });
+        });
 });
 
 //Los parametros que enviamos son nombre y edad. Si nombre o edad no se envía se envía nuevo estatus
 //Utilizar en postman Body --> Protocolo x-www-form-urlencoded
 //HTTP/1.1 Status Codes están estandarizados
-app.post('/usuario', function(req, res) {
+app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
     let body = req.body;
 
     let usuario = new Usuario({
@@ -83,7 +86,7 @@ app.post('/usuario', function(req, res) {
 })
 
 //localhost:3000/usuario/lo_que_sea_que_ponga (En postman pondra un objeto con lo_que_sea_que_ponga)
-app.put('/usuario/:id', function(req, res) {
+app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
     let id = req.params.id;
     let body = _.pick(req.body, ['nombre', 'email', 'img', 'rol', 'estado']);
 
@@ -116,7 +119,7 @@ app.put('/usuario/:id', function(req, res) {
 
 })
 
-app.delete('/usuario/:id', function(req, res) {
+app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
     let id = req.params.id;
     /*
     //Borrado permanente

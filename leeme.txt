@@ -5,6 +5,7 @@
 5º) npm i mongoose-unique-validator --save
 6º) npm i bcrypt --save
 7º) npm i underscore --save
+8º) npm i jsonwebtoken --save
 
 Heroku
 package.json --> en "scripts" --> Se escribe "start": node server.js (Para que inicialice el servidor Heroku)

@@ -17,3 +17,10 @@ if (process.env.NODE_ENV === 'dev') {
 
 //Creamos un nuevo procces.env
 process.env.urlDB = urlDB;
+
+//Caducidad del token
+//60 s/m *60m/h*24h/dias*30dias
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+//Secret de autentificación de token
+process.env.SECRET = 'secret';
