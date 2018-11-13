@@ -61,28 +61,12 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
                 err
             });
         }
-        //Si no lo hay, se guarda
+        //Si no lo hay, se imprime esta informacion
         res.json({ //Manda status(200) por defecto
             ok: true,
             usuario: usuarioDB
         });
     });
-
-    /*
-    if (body.nombre === undefined) {
-        res.status(400).json({
-            ok: false,
-            mensaje: 'No enviado el nombre'
-        });
-    } else if (body.edad === undefined) {
-        res.status(400).json({
-            ok: false,
-            mensaje: 'No enviado la edad'
-        });
-    } else {
-        res.json({ body })
-    }
-    */
 })
 
 //localhost:3000/usuario/lo_que_sea_que_ponga (En postman pondra un objeto con lo_que_sea_que_ponga)

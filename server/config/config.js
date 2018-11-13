@@ -24,3 +24,6 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
 
 //Secret de autentificación de token
 process.env.SECRET = 'secret';
+
+//Google Claim ID
+process.env.CLIENT_ID = process.env.CLIENT_ID || '437244290951-ke9q8dfi2qb3kfjk3k63sobf5k8eqqmb.apps.googleusercontent.com';

@@ -13,7 +13,7 @@ let verificaToken = (req, res, next) => {
             });
         }
         req.usuario = decoded.data;
-        console.log(decoded);
+        //console.log(decoded); //Muestra el usuario del token enviado
         //Esta funcion es necesaria para qe despues del middleware de app.get... siga la funcion y haga el callback
         next();
     });
