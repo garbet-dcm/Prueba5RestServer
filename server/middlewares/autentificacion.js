@@ -12,6 +12,7 @@ let verificaToken = (req, res, next) => {
                 err: 'Token no válido'
             });
         }
+        //Se añade a req los datos de usuario
         req.usuario = decoded.data;
         //console.log(decoded); //Muestra el usuario del token enviado
         //Esta funcion es necesaria para qe despues del middleware de app.get... siga la funcion y haga el callback
