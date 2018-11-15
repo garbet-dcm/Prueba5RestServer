@@ -18,9 +18,6 @@ let verificaToken = (req, res, next) => {
         //Esta funcion es necesaria para qe despues del middleware de app.get... siga la funcion y haga el callback
         next();
     });
-
-
-
 };
 
 let verificaAdmin_Role = (req, res, next) => {
@@ -36,8 +33,27 @@ let verificaAdmin_Role = (req, res, next) => {
     }
 };
 
+let verificaToken_Img = (req, res, next) => {
+    let token = req.query.token;
+
+    jwt.verify(token, process.env.SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({
+                ok: false,
+                err: 'Token no válido'
+            });
+        }
+        //Se añade a req los datos de usuario
+        req.usuario = decoded.data;
+        //console.log(decoded); //Muestra el usuario del token enviado
+        //Esta funcion es necesaria para qe despues del middleware de app.get... siga la funcion y haga el callback
+        next();
+    });
+};
+
 
 module.exports = {
     verificaToken,
-    verificaAdmin_Role
+    verificaAdmin_Role,
+    verificaToken_Img
 };

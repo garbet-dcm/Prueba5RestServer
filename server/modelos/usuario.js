@@ -42,7 +42,7 @@ let usuarioSchema = new Schema({
     },
 });
 
-//El métido toJSON siempre se intenta llamar cuando se va a imprimir, 
+//El método toJSON siempre se intenta llamar cuando se va a imprimir, 
 //por eso aqui es donde se modifica el usuario para que no aparezca el campo de password
 //Se tiene que utilizar function porque se usa .this
 usuarioSchema.methods.toJSON = function() {

@@ -1,12 +1,13 @@
-1º) npm init
-2º) npm install express --save
-3º) npm i body-parser --save (i = install)
-4º) npm i mongoose --save
-5º) npm i mongoose-unique-validator --save
-6º) npm i bcrypt --save
-7º) npm i underscore --save
-8º) npm i jsonwebtoken --save
-9º) npm i google-auth-library --save
+1º)  npm init   (Para crear package.json)
+2º)  npm i express --save   (i = install)(Para conexiones/comunicaciones)
+3º)  npm i body-parser --save 
+4º)  npm i mongoose --save
+5º)  npm i mongoose-unique-validator --save
+6º)  npm i bcrypt --save   (Para encriptar texto)
+7º)  npm i underscore --save
+8º)  npm i jsonwebtoken --save   (Para generar e interpretar los token)
+9º)  npm i google-auth-library --save   (Para autentificación por google)
+10º) npm i express-fileupload   (Extensión de express para subir archivos)
 
 Heroku
 package.json --> en "scripts" --> Se escribe "start": node server.js (Para que inicialice el servidor Heroku)
