@@ -1,4 +1,4 @@
-1º)  npm init   (Para crear package.json)
+﻿1º)  npm init (Para crear package.json)
 2º)  npm i express --save   (i = install)(Para conexiones/comunicaciones)
 3º)  npm i body-parser --save 
 4º)  npm i mongoose --save
@@ -8,6 +8,8 @@
 8º)  npm i jsonwebtoken --save   (Para generar e interpretar los token)
 9º)  npm i google-auth-library --save   (Para autentificación por google)
 10º) npm i express-fileupload   (Extensión de express para subir archivos)
+
+npm install --> Instalaria todos los paquetes agregados en package.json
 
 Heroku
 package.json --> en "scripts" --> Se escribe "start": node server.js (Para que inicialice el servidor Heroku)
