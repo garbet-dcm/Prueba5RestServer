@@ -27,5 +27,6 @@ mongoose.connect(process.env.urlDB, (error, res) => {
     if (error) throw error;
     console.log('Base de datos ONLINE'.green)
 });
+console.log('Pruebaaaaaaaaaayghghghgfhgfjaaaaa');
 
 app.listen(process.env.PORT, () => console.log(`Escuchando puerto ${process.env.PORT}`.yellow))
